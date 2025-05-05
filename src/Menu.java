@@ -25,6 +25,8 @@ public class Menu {
 		Scanner leia = new Scanner(System.in);
 		int opcao;
 
+		System.out.println();
+
 		while (true) {
 			System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_GREEN);
 			System.out.println("*****************************************************");
