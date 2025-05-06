@@ -4,15 +4,26 @@ import java.io.IOException;
 import java.util.Optional;
 import java.util.Scanner;
 
+
 import conta_bancaria.controller.ContaController;
 import conta_bancaria.model.Conta;
 import conta_bancaria.model.ContaCorrente;
 import conta_bancaria.model.ContaPoupanca;
+
+import conta_bancaria.model.Conta;
+
 import conta_bancaria.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
+
+		Conta c1 = new Conta(1, 123, 1, "Bruno", 10000.0f);
+		c1.visualizar();
+		c1.sacar(12000.0f);
+		c1.visualizar();
+		c1.depositar(1000.0f);
+		c1.visualizar();
 
 		Scanner leia = new Scanner(System.in);
 
@@ -231,7 +242,7 @@ public class Menu {
 		System.out.println("https://github.com/Brunogodoy2911");
 		System.out.println("*********************************************************");
 	}
-
+  
 	public static void keyPress() {
 
 		try {
@@ -245,5 +256,4 @@ public class Menu {
 
 		}
 	}
-
 }
