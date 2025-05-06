@@ -1,6 +1,10 @@
 package conta_bancaria.model;
 
-public class Conta {
+import java.text.NumberFormat;
+
+public abstract class Conta {
+
+	NumberFormat nfMoeda = NumberFormat.getCurrencyInstance();
 
 	private int numero;
 	private int agencia;
@@ -68,9 +72,8 @@ public class Conta {
 	}
 
 	public void depositar(float valor) {
-
+    
 		this.setSaldo(this.getSaldo() + valor);
-
 	}
 
 	public void visualizar() {
@@ -89,7 +92,7 @@ public class Conta {
 		System.out.printf("Agência         : %d%n", this.agencia);
 		System.out.printf("Tipo da Conta   : %s%n", tipoConta);
 		System.out.printf("Titular         : %s%n", this.titular);
-		System.out.printf("Saldo           : R$ %.2f%n", this.saldo);
+		System.out.printf("Saldo           : %s%n", nfMoeda.format(this.saldo));
 		System.out.println("***************************************************");
 	}
 
